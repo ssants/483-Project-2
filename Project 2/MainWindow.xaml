@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="304.808" Width="525">
     <Grid>
-        
+        <Label Content="First Number" HorizontalAlignment="Left" Margin="22,91,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="FirstBox" HorizontalAlignment="Left" Height="23" Margin="22,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" Text="{Binding Path=FirstNumber}"/>
+        <Button x:Name="ExitButt" Content="Exit" HorizontalAlignment="Left" Margin="10,232,0,0" VerticalAlignment="Top" Width="75" Click="ExitButt_Click"/>
+        <Button x:Name="AddButt" Content="+" HorizontalAlignment="Left" Margin="135,82,0,0" VerticalAlignment="Top" Width="62" Click="AddButt_Click"/>
+        <Button x:Name="MinButt" Content="-" HorizontalAlignment="Left" Margin="135,107,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="0.038,0.262" Click="MinButt_Click"/>
+        <Button x:Name="MultButt" Content="*" HorizontalAlignment="Left" Margin="135,132,0,0" VerticalAlignment="Top" Width="62" Click="MultButt_Click"/>
+        <Button x:Name="DivButt" Content="/" HorizontalAlignment="Left" Margin="135,157,0,0" VerticalAlignment="Top" Width="62" Click="DivButt_Click"/>
+        <Label Content="Second Number" HorizontalAlignment="Left" Margin="219,85,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="SecondBox" HorizontalAlignment="Left" Height="23" Margin="219,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Text="{Binding Path=SecondNum}"/>
+        <Label Content="Result" HorizontalAlignment="Left" Margin="423,90,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ResultBox" HorizontalAlignment="Left" Height="23" Margin="407,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Text="{Binding Path=ResultNum}"/>
+        <Button x:Name="EqualsButt" Content="=" HorizontalAlignment="Left" Margin="325,123,0,0" VerticalAlignment="Top" Width="62" Click="EqualsButt_Click"/>
+        <Label Content="Current Operation:" HorizontalAlignment="Left" Margin="248,180,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="OpBox" HorizontalAlignment="Left" Height="23" Margin="362,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" Text="{Binding Path=Op}"/>
+        <TextBlock x:Name="ErrorBlock" HorizontalAlignment="Left" Margin="157,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177"/>
+
     </Grid>
 </Window>
