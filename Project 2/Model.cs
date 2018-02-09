@@ -48,7 +48,7 @@ namespace Project_2
 
         #endregion
 
-        private int _firstNum;
+        private float _firstNum;
         public string FirstNum
         {
             get { return _firstNum.ToString(); }
@@ -56,7 +56,7 @@ namespace Project_2
             {
                 try
                 {
-                    _firstNum = int.Parse(value);
+                    _firstNum = float.Parse(value);
                 }
                 catch
                 {
@@ -65,7 +65,7 @@ namespace Project_2
             }
         }
 
-        private int _secondNum;
+        private float _secondNum;
         public string SecondNum
         {
             get { return _secondNum.ToString(); }
@@ -73,7 +73,7 @@ namespace Project_2
             {
                 try
                 {
-                    _secondNum = int.Parse(value);
+                    _secondNum = float.Parse(value);
                 }
                 catch
                 {
@@ -130,7 +130,15 @@ namespace Project_2
                     break;
 
                 case CurrentOp.DIV:
-                    ResultNum = "" + (_firstNum / _secondNum);
+                    try
+                    {
+
+                        ResultNum = "" + (_firstNum / _secondNum);
+                    }
+                    catch
+                    {
+                        ResultNum = "Error";
+                    }
                     break;
 
             }
