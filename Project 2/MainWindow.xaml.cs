@@ -30,27 +30,27 @@ namespace Project_2
 
         private void AddButt_Click(object sender, RoutedEventArgs e)
         {
-            model.Op = Model.CurrentOp.ADD;
+            model.setCurrentOp("ADD");
         }
 
         private void MinButt_Click(object sender, RoutedEventArgs e)
         {
-            model.Op = Model.CurrentOp.SUB;
+            model.setCurrentOp("SUB");
         }
 
         private void MultButt_Click(object sender, RoutedEventArgs e)
         {
-            model.Op = Model.CurrentOp.MULT;
+            model.setCurrentOp("MULT");
         }
 
         private void DivButt_Click(object sender, RoutedEventArgs e)
         {
-            model.Op = Model.CurrentOp.DIV;
+            model.setCurrentOp("DIV");
         }
 
         private void EqualsButt_Click(object sender, RoutedEventArgs e)
         {
-
+            model.calculate();
         }
 
         private void ExitButt_Click(object sender, RoutedEventArgs e)

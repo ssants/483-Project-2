@@ -22,38 +22,81 @@ namespace Project_2
             set
             {
                 _op = value;
-                OnPropertyChanged("OpBox");
+                OpString = _op.ToString();
             }
         }
+
+        public void setCurrentOp(string op)
+        {
+            if (op == "ADD") Op = Model.CurrentOp.ADD;
+            else if (op == "SUB") Op = Model.CurrentOp.SUB;
+            else if (op == "MULT") Op = Model.CurrentOp.MULT;
+            else Op = Model.CurrentOp.DIV;
+        }
+
+        private string _opString;
+        public string OpString
+        {
+            get { return _opString; }
+            set
+            {
+                _opString = value;
+                OnPropertyChanged("OpString");
+            }
+        }
+
+
         #endregion
 
-        private float _firstNum;
-        public float FirstNum
+        private int _firstNum;
+        public string FirstNum
         {
-            get { return _firstNum; }
+            get { return _firstNum.ToString(); }
             set
             {
-                _firstNum = value;
+                try
+                {
+                    _firstNum = int.Parse(value);
+                }
+                catch
+                {
+
+                }
             }
         }
 
-        private float _secondNum;
-        public float SecondNum
+        private int _secondNum;
+        public string SecondNum
         {
-            get { return _secondNum; }
+            get { return _secondNum.ToString(); }
             set
             {
-                _secondNum = value;
+                try
+                {
+                    _secondNum = int.Parse(value);
+                }
+                catch
+                {
+
+                }
             }
         }
 
         private float _resultNum;
-        public float ResultNum
+        public string ResultNum
         {
-            get { return _resultNum; }
+            get { return _resultNum.ToString(); }
             set
             {
-                _resultNum = value;
+                try
+                {
+                    _resultNum = float.Parse(value);
+                }
+                catch
+                {
+
+                }
+                OnPropertyChanged("ResultNum");
             }
         }
 
@@ -68,6 +111,29 @@ namespace Project_2
         public Model()
         {
             Op = CurrentOp.NONE;
+        }
+
+        public void calculate()
+        {
+            switch (Op)
+            {
+                case CurrentOp.ADD:
+                    ResultNum = "" + (_firstNum + _secondNum);
+                    break;
+
+                case CurrentOp.SUB:
+                    ResultNum = "" + (_firstNum - _secondNum);
+                    break;
+
+                case CurrentOp.MULT:
+                    ResultNum = "" + (_firstNum * _secondNum);
+                    break;
+
+                case CurrentOp.DIV:
+                    ResultNum = "" + (_firstNum / _secondNum);
+                    break;
+
+            }
         }
     }
 }
